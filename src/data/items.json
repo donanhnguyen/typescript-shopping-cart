@@ -1,0 +1,30 @@
+
+[
+    {
+        "id": 1,
+        "name": "Computer",
+        "price": 800,
+        "imgUrl": "../../public/computer.jpg"
+    }
+    ,
+    {
+        "id": 2,
+        "name": "TV",
+        "price": 1000,
+        "imgUrl": "../../public/tv.jpg"
+    }
+    ,
+    {
+        "id": 3,
+        "name": "Phone",
+        "price": 200,
+        "imgUrl": "../../public/phone.jpg"
+    }
+    ,
+    {
+        "id": 4,
+        "name": "Headphones",
+        "price": 80,
+        "imgUrl": "../../public/headphones.jpg"
+    }
+]
