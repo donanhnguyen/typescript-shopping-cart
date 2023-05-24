@@ -12,7 +12,7 @@ type StoreItemProps = {
 export function StoreItem ({id, price, name, imgUrl}: StoreItemProps) {
 
 
-    const quantity = 1;
+    const quantity = 0;
 
     return (
         <Card>
