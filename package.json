@@ -1,12 +1,9 @@
 {
-  "homepage": "http://thedonwind69.github.io/typescript-shopping-cart",
   "name": "typescript-shopping-cart",
   "private": true,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "dev": "vite",
     "build": "tsc && vite build",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
