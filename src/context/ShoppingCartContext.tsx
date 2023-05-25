@@ -1,5 +1,5 @@
 import { createContext, ReactNode, useContext, useState} from "react"
-
+import { ShoppingCart } from "../components/ShoppingCart"
 
 type ShoppingCartProviderProps = {
     children: ReactNode
@@ -11,10 +11,14 @@ type CartItem = {
 }
 
 type ShoppingCartContext = {
+    openCart: () => void
+    closeCart: () => void
     getItemQuantity: (id: number) => number
     increaseCart: (id: number) => void
     decreaseCart: (id: number) => void
     removeFromCart: (id: number) => void
+    cartQuantity: number
+    cartItems: CartItem[]
 }
 
 const ShoppingCartContext = createContext({} as ShoppingCartContext);
@@ -25,8 +29,18 @@ export function useShoppingCart () {
 
 export function ShoppingCartProvider({children}: ShoppingCartProviderProps ) {
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const openCart = () => {
+        setIsOpen(true);
+    }
+    const closeCart = () => {
+        setIsOpen(false);
+    }
 
     const [cartItems, setCartItems] = useState<CartItem[]>([])
+
+    const cartQuantity = cartItems.reduce((quantity, item) => item.quantity + quantity, 0)
 
     function getItemQuantity(id: number) {
         return cartItems.find((item) => item.id === id)?.quantity || 0
@@ -65,12 +79,14 @@ export function ShoppingCartProvider({children}: ShoppingCartProviderProps ) {
     }
 
     function removeFromCart(id: number) {
-        setCartItems((currentItems) => {
+        setCartItems((currentItems) => { 
             return currentItems.filter((item) => item.id !== id)
         })
     }
 
-    return <ShoppingCartContext.Provider value={{ getItemQuantity, increaseCart, decreaseCart, removeFromCart }}>
+    return <ShoppingCartContext.Provider value={{ getItemQuantity, increaseCart, decreaseCart, removeFromCart, cartItems, cartQuantity, openCart, closeCart }}>
         {children}
+
+        <ShoppingCart isOpen={isOpen}></ShoppingCart>
     </ShoppingCartContext.Provider>
 }
