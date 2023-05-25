@@ -4,27 +4,27 @@
         "id": 1,
         "name": "Computer",
         "price": 800,
-        "imgUrl": "../../public/computer.jpg"
+        "imgUrl": "https://cdn.thewirecutter.com/wp-content/media/2022/07/laptop-under-500-2048px-acer-1.jpg"
     }
     ,
     {
         "id": 2,
         "name": "TV",
         "price": 1000,
-        "imgUrl": "../../public/tv.jpg"
+        "imgUrl": "https://m.media-amazon.com/images/I/91UsHjAPTlL._AC_UF1000,1000_QL80_.jpg"
     }
     ,
     {
         "id": 3,
         "name": "Phone",
         "price": 200,
-        "imgUrl": "../../public/phone.jpg"
+        "imgUrl": "https://i.pcmag.com/imagery/roundups/07ml3nh3QrzTLZ9UycfQQB2-49..v1668971764.jpg"
     }
     ,
     {
         "id": 4,
         "name": "Headphones",
         "price": 80,
-        "imgUrl": "../../public/headphones.jpg"
+        "imgUrl": "https://media.wired.com/photos/641e28d7c5d2100c6c651020/191:100/w_2580,c_limit/Bose-QC35-II-Gear.png"
     }
 ]
